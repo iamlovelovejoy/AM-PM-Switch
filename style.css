@@ -1,0 +1,77 @@
+/* Basic page styles */
+body {
+    transition: background-color 0.10s ease; /* Smooth transition for background color change */
+    font-family: Arial, sans-serif;
+    display: flex; /* Aligns content in the center */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    background-color: #77B0AA; 
+  }
+  
+  /* Container that holds the switch and label */
+  .switch-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adds space between the switch and the text */
+    
+  }
+  
+  /* Switch container styles */
+  .switch {
+    position: relative; /* Needed for positioning the slider. the element remains in the document's normal flow, meaning it still occupies the same space as it would without any positioning*/
+    display: inline-block; /* flow horizontally, much like inline elements (e.g., <span>, <a>, etc.), meaning they can sit next to other elements on the same line*/
+    width: 60px; /* Width of the switch */
+    height: 34px; /* Height of the switch */
+  }
+  
+  /* Hide the checkbox */
+  .switch input {
+    opacity: 0; /* Fully hidden */
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider part of the switch */
+  .slider {
+    position: absolute; /* it is taken out of the normal flow of the document. This means it no longer affects the positioning of other elements around it, and other elements will behave as if the absolutely positioned element does not exist */ 
+    cursor: pointer; /* Changes cursor to a hand */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Default gray background for the switch */
+    transition: 0.5s; /* Smooth transition effect */
+    border-radius: 14px; /* Makes the switch rounded */
+  }
+  
+  /* The circle inside the switch (the actual "handle") */
+  .slider:before {
+    position: absolute;
+    content: ""; /* Empty content to create the circle */
+    height: 26px; /* Height of the circle */
+    width: 26px; /* Width of the circle */
+    left: 4px; /* Position the circle slightly from the left */
+    bottom: 4px; /* Position the circle slightly from the bottom */
+    background-color: white; /* White color for the circle */
+    transition: 0.5s; /* Smooth transition for the movement */
+    border-radius: 50%; /* Makes it a circle */
+  }
+  
+  /* When the checkbox is checked (switch is "on") */
+  input:checked + .slider {
+    background-color: #2196F3; /* Change the background to blue */
+  }
+  
+  /* Move the circle to the right when checked */
+  input:checked + .slider:before {
+    transform: translateX(26px); /* Moves the circle to the right */
+  }
+  
+  /* Style for the AM/PM text next to the switch */
+  #label-text {
+    font-size: 20px; /* Size of the text */
+    color: #333; /* Dark gray color */
+  }
+  
