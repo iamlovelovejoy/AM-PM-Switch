@@ -6,10 +6,10 @@ const labelText = document.getElementById('label-text');
 // Function to update the background color and label text based on the switch state
 function updateBackgroundColor() {
     if (amPmSwitch.checked) {
-        document.body.style.backgroundColor = 'darkblue'; // Set background color to dark blue for PM
+        document.body.style.backgroundColor = '#E4B1F0'; // Set background color to dark blue for PM
         labelText.textContent = 'PM'; // Update label text to PM
     } else {
-        document.body.style.backgroundColor = 'lightyellow'; // Set background color to light yellow for AM
+        document.body.style.backgroundColor = '#FFE1FF'; // Set background color to light yellow for AM
         labelText.textContent = 'AM'; // Update label text to AM
     }
 }
